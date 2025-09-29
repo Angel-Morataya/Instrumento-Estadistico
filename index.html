@@ -1511,12 +1511,10 @@
             <p style="margin-bottom: 1.5rem; text-align: center;">Gracias por tu valiosa contribución a esta investigación. Tus respuestas ayudarán a mejorar el diseño de interfaces de usuario.</p>
             
             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                <button class="btn btn-primary" onclick="downloadData()" style="flex: 1;">
-                    💾 Descargar Copia
+                <button class="btn btn-primary" onclick="closePage()" style="flex: 1;">
+                    Cerrar Pagina
                 </button>
-                <button class="btn btn-secondary" onclick="location.reload()" style="flex: 1;">
-                    🔄 Nueva Sesión
-                </button>
+
             </div>
         </div>
     `;
@@ -1540,6 +1538,13 @@
             link.click();
             document.body.removeChild(link);
             URL.revokeObjectURL(url);
+        }
+
+        // ============================================
+        // CERRAR PÁGINA
+        // ============================================
+        function closePage() {
+            window.close();
         }
 
         // ============================================
@@ -1715,9 +1720,9 @@
         }
 
         // ============================================
-        // DEBUG MODE (Comentar en producción)
+        // DEBUG MODE
         // ============================================
-        const DEBUG = false;
+        const DEBUG = true;
 
         if (DEBUG) {
             console.log('=== DEBUG MODE ENABLED ===');
